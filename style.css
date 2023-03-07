@@ -32,14 +32,22 @@ body {
     margin: 0 auto;
 
 }
-.button-container{
+
+.button-container {
     display: flex;
+    flex-direction: column;
 }
-.book-add-button{
+
+form{
+    display: flex;
+    flex-direction: column;
+}
+
+.book-add-button {
     margin: 0 auto;
 }
 
-.books-grid{
+.books-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 }

@@ -14,7 +14,7 @@ function addBookToLibrary(event) {
     const title = document.querySelector('#title').value;
     const author = document.querySelector('#author').value;
     const pages = document.querySelector('#pages').value;
-    const read = document.querySelector('#read').value;
+    const read = document.querySelector('#read').checked;
     const book = new Book(title, author, pages, read)
     console.log(book)
     bookLibrary.push(book);
@@ -25,10 +25,18 @@ function addBookToLibrary(event) {
         books.appendChild(node);
     }
     event.preventDefault();
+    form.style.visibility = 'hidden';
 }
 
+const submitBook = document.querySelector('.book-add-button');
+submitBook.addEventListener('click', addBookToLibrary)
 
-
-
-const button = document.querySelector('.book-add-button');
-button.addEventListener('click', addBookToLibrary)
+const showForm = document.querySelector('.show-form');
+const form = document.querySelector('.button-container')
+showForm.addEventListener('click', () => {
+    if (form.style.visibility == 'hidden') {
+        form.style.visibility = 'visible';
+    } else {
+        form.style.visibility = 'hidden';
+    }
+})

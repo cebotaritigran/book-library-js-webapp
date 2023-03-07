@@ -65,3 +65,11 @@ form {
 .remove-button{
 
 }
+
+.read-button{
+    background-color: rgb(235, 123, 123);
+}
+
+.have-read {
+    background-color: greenyellow;
+}

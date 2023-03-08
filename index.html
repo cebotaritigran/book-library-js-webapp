@@ -10,7 +10,7 @@
     <title>Library</title>
 </head>
 
-<body>
+<body class="background">
     <header class="header">
         <div class="container-header">
             <h1 class="project-title">Library</h1>
@@ -19,20 +19,19 @@
     </header>
     <main class="main">
         <button class="show-form">+ Add Book</button>
-        <div class="button-container">
+        <div class="new-book-form">
             <div class="form-container">
-                <form autocomplete="off" >
-                    <label for="title">Title:</label>
-                    <input id="title" type="text">
-                    <label for="author">Author:</label>
-                    <input id="author" type="text">
-                    <label for="pages">Number of Pages:</label>
-                    <input id="pages" type="number">
-                    <label for="read">I have read it:</label>
-                    <input id="read" type="checkbox">
+                <form autocomplete="off" class="form">
+                    <input id="title" type="text" placeholder="Title" minlength="3" maxlength="40" required>
+                    <input id="author" type="text" placeholder="Author" minlength="3" maxlength="40" required>
+                    <input id="pages" type="number" placeholder="Page" min="5" max="10000" required>
+                    <div class="checkbox-container">
+                        <label for="read">I have read it:<input id="read" type="checkbox"></label>
+                    </div>
+                    <button class="book-add-button" type="submit">Submit</button>
                 </form>
             </div>
-            <button class="book-add-button">Submit</button>
+
         </div>
         <div class="books-grid">
         </div>

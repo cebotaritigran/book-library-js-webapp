@@ -1,7 +1,9 @@
+// array to store objects
 let bookLibrary = [];
 
 const books = document.querySelector('.books-grid');
 
+// new constructor for book
 function Book(title, author, pages) {
     this.title = title
     this.author = author
@@ -9,6 +11,8 @@ function Book(title, author, pages) {
     return [this.title, this.author, this.pages];
 }
 
+
+// event to add divs to container
 function addBookToLibrary(event) {
     const title = document.querySelector('#title').value;
     const author = document.querySelector('#author').value;
@@ -87,6 +91,8 @@ function addBookToLibrary(event) {
 const submitBook = document.querySelector('.form');
 submitBook.addEventListener('submit', addBookToLibrary);
 
+
+// showing form on click by changing visibility
 const showForm = document.querySelector('.show-form');
 const form = document.querySelector('.new-book-form')
 showForm.addEventListener('click', () => {

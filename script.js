@@ -4,11 +4,20 @@ let bookLibrary = [];
 const books = document.querySelector('.books-grid');
 
 // new constructor for book
-function Book(title, author, pages) {
-    this.title = title
-    this.author = author
-    this.pages = pages
-    return [this.title, this.author, this.pages];
+// function Book(title, author, pages) {
+//     this.title = title
+//     this.author = author
+//     this.pages = pages
+//     return [this.title, this.author, this.pages];
+// }
+
+class Book {
+    constructor(title, author, pages){
+        this.title = title;
+        this.author = author;
+        this.pages = pages;
+        return [this.title, this.author, this.pages];
+    }
 }
 
 

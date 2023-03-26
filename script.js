@@ -3,6 +3,84 @@ let bookLibrary = [];
 
 const books = document.querySelector('.books-grid');
 
+function validateForm() {
+    //saving elements to a variable
+    const form = document.querySelector('.form');
+
+    const titleInput = document.querySelector('#title');
+    const authorInput = document.querySelector('#author');
+    const pagesInput = document.querySelector('#pages');
+    const titleError = document.querySelector("span.errorTitle");
+    const authorError = document.querySelector("span.errorAuthor");
+    const pagesError = document.querySelector("span.errorPages");
+
+    function showErrorTitle() {
+        if (titleInput.validity.valueMissing) {
+            // If the field is empty,
+            // display the following error message.
+            titleError.textContent = "You need to enter a title.";
+        } else if (titleInput.validity.tooShort) {
+            titleError.textContent = 'too short';
+        }
+    }
+
+    function showErrorAuthor() {
+        if (authorInput.validity.valueMissing) {
+            // If the field is empty,
+            // display the following error message.
+            authorError.textContent = "You need to enter an author.";
+        } else if (authorInput.validity.tooShort) {
+            authorError.textContent = 'too short';
+        }
+    }
+
+    function showErrorPages() {
+        if (pagesInput.validity.valueMissing) {
+            // If the field is empty,
+            // display the following error message.
+            pagesError.textContent = "You need to enter number of pages.";
+        } else if (pagesInput.validity.tooShort) {
+            pagesError.textContent = 'too short';
+        }
+    }
+
+    // validate on input
+    titleInput.addEventListener('input', (event) => {
+        if (titleInput.validity.valid) {
+            titleError.textContent = '';
+        } else {
+            showErrorTitle();
+        }
+    });
+
+    authorInput.addEventListener('input', (event) => {
+        if (authorInput.validity.valid) {
+            authorError.textContent = '';
+        } else {
+            showErrorAuthor();
+        }
+    });
+
+    pagesInput.addEventListener('input', (event) => {
+        if (pagesInput.validity.valid) {
+            pagesError.textContent = '';
+        } else {
+            showErrorPages();
+        }
+    });
+
+
+    form.addEventListener('submit', (event) => {
+        if (!title.validity.valid) {
+            showErrorTitle()
+            showErrorAuthor()
+            showErrorPages()
+            event.preventDefault();
+        }
+    })
+}
+validateForm();
+
 // new constructor for book
 // function Book(title, author, pages) {
 //     this.title = title
@@ -12,7 +90,7 @@ const books = document.querySelector('.books-grid');
 // }
 
 class Book {
-    constructor(title, author, pages){
+    constructor(title, author, pages) {
         this.title = title;
         this.author = author;
         this.pages = pages;

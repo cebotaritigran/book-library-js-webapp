@@ -23,8 +23,11 @@
             <div class="form-container">
                 <form autocomplete="off" class="form">
                     <input id="title" type="text" placeholder="Title" minlength="3" maxlength="40" required>
+                    <span class="errorTitle" aria-live="polite"></span>
                     <input id="author" type="text" placeholder="Author" minlength="3" maxlength="40" required>
+                    <span class="errorAuthor" aria-live="polite"></span>
                     <input id="pages" type="number" placeholder="Page" min="5" max="10000" required>
+                    <span class="errorPages" aria-live="polite"></span>
                     <div class="checkbox-container">
                         <label for="read">I have read it:<input id="read" type="checkbox"></label>
                     </div>
